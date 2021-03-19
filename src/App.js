@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <Layout>
-      Ayana's vegetable seedы shop<br />
+      <SeedsBuilder />
       </Layout>
     </div>
   );
