@@ -1,16 +1,16 @@
 
 import Logo from "../../Logo/Logo";
 import Nav from "../../Nav/Nav";
-import DrawerToggle from "../Drawer/DrawerToggle";
+import DrawerOpen from "../Drawer/DrawerOpen";
 import classes from "./Toolbar.module.css";
 
 
-const Toolbar = ({ setDrawerOpen }) => {
+const Toolbar = ({ openDrawer }) => {
     return (
         <div className={classes.Toolbar}>
         <Logo />
         <Nav />
-        <DrawerToggle setDrawerOpen={setDrawerOpen} />
+        <DrawerOpen click={openDrawer} />
         </div>
     )
 }
