@@ -8,4 +8,6 @@ const SeedsBuilder = () => {
 
         </div>
     )
-}
+};
+
+export default SeedsBuilder;
