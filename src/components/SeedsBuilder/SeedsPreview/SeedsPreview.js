@@ -1,20 +1,18 @@
 import SeedsIngredient from "../SeedsIngredient/SeedsIngredient";
-import classes from "./PizzaPreview.module.css";
+import classes from "./SeedsPreview.module.css";
 
-const SeedsPreview = () => {
+const SeedsPreview = ({ ingredients }) => {
+  const result = [];
+  for (const ingredient in ingredients) {
+    for (let i = 0; i < ingredients[ingredient]; i++) {
+      result.push(<SeedsIngredient type={ingredient} />)
+    }
+  }
+
   return (
     <div className={classes.SeedsPreview}>
       <div className={classes.sauce}>
-        <PizzaIngredient type="tomato" />
-        <PizzaIngredient type="tomato" />
-        <PizzaIngredient type="tomato" />
-        <PizzaIngredient type="tomato" />
-        <PizzaIngredient type="tomato" />
-        <PizzaIngredient type="tomato" />
-        <PizzaIngredient type="tomato" />
-        <PizzaIngredient type="salami" />
-        <PizzaIngredient type="olive" />
-        <PizzaIngredient type="mushroom" />
+        {result}
       </div>
     </div>
   );
