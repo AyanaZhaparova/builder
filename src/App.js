@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="App">
       <Layout>
-        <PizzaBuilder />
+        <SeedsBuilder />
       </Layout>
     </div>
   );
