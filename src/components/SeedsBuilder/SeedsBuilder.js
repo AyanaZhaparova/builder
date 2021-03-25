@@ -4,9 +4,9 @@ import SeedsControls from "./SeedsControls/SeedsControls";
 
 const SeedsBuilder = () => {
   const ingredients = {
-    tomato: 10,
-    salami: 20,
-    olive: 10,
+    rose: 10,
+    orchids: 20,
+    ochamomile: 10,
   };
 
   return (

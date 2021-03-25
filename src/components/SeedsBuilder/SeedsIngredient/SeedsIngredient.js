@@ -1,14 +1,15 @@
 import classes from "./SeedsIngredient.module.css";
 
-import salamiBackground from "../../../images/carrot.svg";
-import tomatoBackground from "../../../images/peaper.svg";
-import oliveBackground from "../../../images/tomato.svg";
+import roseBackground from "../../../images/rose.svg";
+import orchidsBackground from "../../../images/orchids.svg";
+import chamomileBackground from "../../../images/chamomile.svg";
+
 
 const SeedsIngredient = ({ type }) => {
   const types = {
-    salami: { backgroundImage: `url(${salamiBackground})`, width: "35px", height: "35px" },
-    tomato: { backgroundImage: `url(${tomatoBackground})`, width: "35px", height: "35px" },
-    olive: { backgroundImage: `url(${oliveBackground})`, width: "10px", height: "10px" },
+    rose: { backgroundImage: `url(${roseBackground})`, width: "35px", height: "35px" },
+    orchids: { backgroundImage: `url(${orchidsBackground})`, width: "35px", height: "35px" },
+    chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "20px", height: "20px" },
   };
 
   return (

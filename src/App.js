@@ -2,7 +2,7 @@ import Layout from "./components/Layout/Layout";
 import SeedsBuilder from "./components/SeedsBuilder/SeedsBuilder";
 import "./App.css";
 
-function App() {
+const App() {
   return (
     <div className="App">
       <Layout>

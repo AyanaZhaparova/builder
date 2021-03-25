@@ -5,9 +5,10 @@
     top: 0;
     left: 0;
   
+    font-family: 'Crimson Text', serif;
     font-size: 2rem;
     color: white;
-    background-color: chocolate;
+    background-color: lightcoral;
     box-shadow: 0 0 10px rgba(0, 0, 0, .5);
   }
   

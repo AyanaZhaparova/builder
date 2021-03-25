@@ -1,9 +1,10 @@
 .SeedsPreview {
     flex: 0 0 400px;
     height: 400px;
-    margin-right: 1rem;
+    margin-top: 5rem;
+    margin-right: 5rem;
     margin-bottom: 1rem;
-    border-radius: 100%;
+    
     background-color: wheat;
   
     display: flex;
@@ -13,6 +14,6 @@
   .sauce {
     width: 370px;
     height: 370px;
-    border-radius: 100%;
+    
     background-color: chocolate;
   }
