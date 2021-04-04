@@ -1,5 +1,4 @@
-import SeedsFlower from "../SeedsFlower/SeedsFlower";
-
+import SeedsViews from "../SeedsViews/SeedsViews";
 import classes from "./SeedsPreview.module.css";
 
 
@@ -7,7 +6,7 @@ const SeedsPreview = ({ flowers }) => {
   const result = [];
   for (const flower in flowers) {
     for (let i = 0; i < flowers[flower]; i++) {
-      result.push(<SeedsFlower key={flower + i} type={flower} />)
+      result.push(<SeedsViews key={flower + i} type={flower} />)
     }
   }
 

@@ -1,4 +1,4 @@
-import classes from "./SeedsFlower.module.css";
+import classes from "./SeedsViews.module.css";
 
 import roseBackground from "../../../images/rose.svg";
 import orchidsBackground from "../../../images/orchids.svg";
@@ -17,4 +17,4 @@ const SeedsFlower = ({ type }) => {
   );
 }
 
-export default SeedsFlower;
+export default SeedsViews;
