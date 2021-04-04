@@ -4,9 +4,9 @@ import SeedsControls from "./SeedsControls/SeedsControls";
 
 const SeedsBuilder = () => {
   const flowers = {
-    rose: 10,
-    orchids: 20,
-    ochamomile: 10,
+    rose: 5,
+    orchids: 5,
+    ochamomile: 5,
   };
 
   return (
