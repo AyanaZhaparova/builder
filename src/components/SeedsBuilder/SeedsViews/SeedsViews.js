@@ -5,7 +5,7 @@ import orchidsBackground from "../../../images/orchids.svg";
 import chamomileBackground from "../../../images/chamomile.svg";
 
 
-const SeedsFlower = ({ type }) => {
+const SeedsViews = ({ type }) => {
   const types = {
     rose: { backgroundImage: `url(${roseBackground})`, width: "35px", height: "35px" },
     orchids: { backgroundImage: `url(${orchidsBackground})`, width: "35px", height: "35px" },
