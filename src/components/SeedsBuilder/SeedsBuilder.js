@@ -3,7 +3,7 @@ import SeedsPreview from "./SeedsPreview/SeedsPreview";
 import SeedsControls from "./SeedsControls/SeedsControls";
 
 const SeedsBuilder = () => {
-  const ingredients = {
+  const flowers = {
     rose: 10,
     orchids: 20,
     ochamomile: 10,
@@ -11,7 +11,7 @@ const SeedsBuilder = () => {
 
   return (
     <div className={classes.SeedsBuilder}>
-      <SeedsPreview ingredients={ingredients} />
+      <SeedsPreview flowers={flowers} />
       <SeedsControls />
     </div>
   );

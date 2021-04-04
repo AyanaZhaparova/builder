@@ -1,11 +1,11 @@
-import classes from "./SeedsIngredient.module.css";
+import classes from "./SeedsFlower.module.css";
 
 import roseBackground from "../../../images/rose.svg";
 import orchidsBackground from "../../../images/orchids.svg";
 import chamomileBackground from "../../../images/chamomile.svg";
 
 
-const SeedsIngredient = ({ type }) => {
+const SeedsFlower = ({ type }) => {
   const types = {
     rose: { backgroundImage: `url(${roseBackground})`, width: "35px", height: "35px" },
     orchids: { backgroundImage: `url(${orchidsBackground})`, width: "35px", height: "35px" },
@@ -13,8 +13,8 @@ const SeedsIngredient = ({ type }) => {
   };
 
   return (
-    <div className={classes.SeedsIngredient} style={types[type]}></div>
+    <div className={classes.SeedsFlower} style={types[type]}></div>
   );
 }
 
-export default SeedsIngredient;
+export default SeedsFlower;

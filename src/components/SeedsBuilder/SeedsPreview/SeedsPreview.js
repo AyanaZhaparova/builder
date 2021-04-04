@@ -1,17 +1,21 @@
-import SeedsIngredient from "../SeedsIngredient/SeedsIngredient";
+import SeedsFlower from "../SeedsFlower/SeedsFlower";
+
 import classes from "./SeedsPreview.module.css";
 
-const SeedsPreview = ({ ingredients }) => {
+
+const SeedsPreview = ({ flowers }) => {
   const result = [];
-  for (const ingredient in ingredients) {
-    for (let i = 0; i < ingredients[ingredient]; i++) {
-      result.push(<SeedsIngredient type={ingredient} />)
+  for (const flower in flowers) {
+    for (let i = 0; i < flowers[flower]; i++) {
+      result.push(<SeedsFlower key={flower + i} type={flower} />)
     }
   }
 
   return (
     <div className={classes.SeedsPreview}>
-      <div className={classes.sauce}>
+      <div
+        className={classes.flowers}
+        >
         {result}
       </div>
     </div>

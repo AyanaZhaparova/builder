@@ -1,7 +1,8 @@
 import { useState } from "react";
-import classes from "./Layout.module.css";
 import Toolbar from "../../components/Layout/Toolbar/Toolbar";
 import Drawer from "../Layout/Drawer/Drawer";
+
+import classes from "./Layout.module.css";
 
 const Layout = ({ children }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -10,7 +11,9 @@ const Layout = ({ children }) => {
     <div className={classes.Layout}>
       <Toolbar openDrawer={() => setDrawerOpen(true)} />
       <Drawer open={drawerOpen} closeDrawer={() => setDrawerOpen(false)} />
-      {children}
+      <main>
+        {children}
+      </main>
     </div>
   );
 }
