@@ -1,4 +1,4 @@
-import SeedsFlower from "../../SeedsFlower/SeedsFlower";
+import SeedsFlower from "../../SeedsViews/SeedsViews";
 import classes from "./SeedsControl.module.css";
 
 const SeedsControl = ({ type, add, remove }) => {
