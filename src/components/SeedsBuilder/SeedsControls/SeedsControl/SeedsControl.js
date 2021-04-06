@@ -1,4 +1,5 @@
-import SeedsFlower from "../../SeedsViews/SeedsViews";
+
+import SeedsViews from "../../SeedsViews/SeedsViews";
 import classes from "./SeedsControl.module.css";
 
 const SeedsControl = ({ type, add, remove }) => {
@@ -6,7 +7,7 @@ const SeedsControl = ({ type, add, remove }) => {
     <div className={classes.SeedsControl}>
       <button className={classes.more} onClick={() => add(type)}>+</button>
       <div className={classes.flowers}>
-        <SeedsFlower type={type} fixed />
+        <SeedsViews type={type} fixed />
       </div>
       <button className={classes.less} onClick={() => remove(type)}>-</button>
     </div>
