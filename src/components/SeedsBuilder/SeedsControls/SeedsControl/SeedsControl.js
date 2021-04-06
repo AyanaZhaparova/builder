@@ -1,15 +1,15 @@
-
+import Button from "../../../UI/Button/Button";
 import SeedsViews from "../../SeedsViews/SeedsViews";
 import classes from "./SeedsControl.module.css";
 
 const SeedsControl = ({ type, add, remove }) => {
   return (
     <div className={classes.SeedsControl}>
-      <button className={classes.more} onClick={() => add(type)}>+</button>
-      <div className={classes.flowers}>
+      <Button onClick={() => add(type)}>+</Button>
+      <div className={classes.flower}>
         <SeedsViews type={type} fixed />
       </div>
-      <button className={classes.less} onClick={() => remove(type)}>-</button>
+      <Button onClick={() => remove(type)}>-</Button>
     </div>
   );
 }
