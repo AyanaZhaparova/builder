@@ -9,7 +9,6 @@
   height: 400px;
   margin-right: 1rem;
   margin-bottom: 1rem;
-  border-radius: 100%;
   background-color: #fcc067;
 
   display: flex;
@@ -23,7 +22,7 @@
   position: relative;
 }
 .price {
-  background-color: tomato;
+  background-color: lightcoral;
   border-radius: 1rem;
   padding: 0 1rem;
   font-size: 1.5rem;
