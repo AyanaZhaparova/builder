@@ -32,11 +32,15 @@ const SeedsBuilder = () => {
     rose: 5,
     orchids: 5,
     ochamomile: 5,
+    plumeria: 5,
+    gerbera: 5,
   };
 
   const [flowers, setFlowers] = useState({
     rose: 0,
     orchids: 0,
+    plumeria: 0,
+    gerbera: 0,
     ochamomile: 0,
   });
   const [price, setPrice] = useState(150);
