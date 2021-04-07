@@ -35,9 +35,9 @@ const SeedsBuilder = () => {
   };
 
   const [flowers, setFlowers] = useState({
-    rose: 5,
-    orchids: 5,
-    ochamomile: 5,
+    rose: 0,
+    orchids: 0,
+    ochamomile: 0,
   });
   const [price, setPrice] = useState(150);
   const [canBuy, setCanBuy] = useState(true);
