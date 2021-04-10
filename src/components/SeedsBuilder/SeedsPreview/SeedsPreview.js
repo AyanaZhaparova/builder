@@ -1,7 +1,5 @@
 import SeedsViews from "../SeedsViews/SeedsViews";
-
 import classes from "./SeedsPreview.module.css";
-
 
 const SeedsPreview = ({ flowers, price }) => {
   const result = [];
@@ -19,7 +17,7 @@ const SeedsPreview = ({ flowers, price }) => {
           {result}
         </div>
       </div>
-      <div className={classes.price}>{price} som</div>
+      <div className={classes.price}>{price.toFixed(1)} som</div>
     </div>
   );
 }

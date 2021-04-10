@@ -6,15 +6,18 @@ const SeedsControls = ({
   flowers,
   addFlower,
   removeFlower,
-  canBuy,
-  setIsBuying
+  startOrdering
 }) => {
   const results = [];
+  let total = 0;
   for (const flower in flowers) {
+    total += flowers[flower];
+
     results.push(<SeedsControl
         key={flower}
         add={addFlower}
         remove={removeFlower}
+        count={flowers[flower]}
         type={flower} />)
   }
 
@@ -23,9 +26,9 @@ const SeedsControls = ({
       <strong>Views</strong>
       {results}
       <Button
-        onClick={() => setIsBuying(true)}
-        disabled={!canBuy}>
-          Order
+      disabled={!total}
+      onClick={startOrdering}>
+        Order
       </Button>
     </div>
   );

@@ -1,29 +1,11 @@
-// import classes from "./SeedsBuilder.module.css";
-// import SeedsPreview from "./SeedsPreview/SeedsPreview";
-// import SeedsControls from "./SeedsControls/SeedsControls";
-
-// const SeedsBuilder = () => {
-//   const flowers = {
-//     rose: 5,
-//     orchids: 5,
-//     ochamomile: 5,
-//   };
-
-//   return (
-//     <div className={classes.SeedsBuilder}>
-//       <SeedsPreview flowers={flowers} />
-//       <SeedsControls />
-//     </div>
-//   );
-// }
-
-// export default SeedsBuilder;
 
 import SeedsPreview from "./SeedsPreview/SeedsPreview";
 import SeedsControls from "./SeedsControls/SeedsControls";
 
 import classes from "./SeedsBuilder.module.css";
-import { useState } from "react";
+import { useEffect,useState } from "react";
+//import axios from "axios";
+import Button from "../UI/Button/Button";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import Modal from "../UI/Modal/Modal";
 
@@ -34,59 +16,83 @@ const SeedsBuilder = () => {
     ochamomile: 5,
     plumeria: 5,
     gerbera: 5,
+    tulip: 5,
   };
+  
+  const [flowers, setFlowers] = useState({});
+  const [price, setPrice] = useState(0);
+  // const [ordering, setOrdering] = useState(false);
 
-  const [flowers, setFlowers] = useState({
-    rose: 0,
-    orchids: 0,
-    plumeria: 0,
-    gerbera: 0,
-    ochamomile: 0,
-  });
-  const [price, setPrice] = useState(150);
-  const [canBuy, setCanBuy] = useState(true);
-  const [isBuying, setIsBuying] = useState(false);
+  // useEffect(loadDefaults, []);
 
-  function checkCanBuy(newFlowers) {
-    const totalFlowers = Object.values(newFlowers)
-      .reduce((total, current) => total + current);
-    setCanBuy(totalFlowers > 0);
-  }
+  // function loadDefaults() {
+  //   axios
+  //     .get('https://builder-a51d0-default-rtdb.firebaseio.com/default.json')
+  //     .then(response => {
+  //       setPrice(response.data.price);
 
-  function addFlower(type) {
-    const newFlowers = { ...flowers };
-    newFlowers[type]++;
-    checkCanBuy(newFlowers);
-    setPrice(price + prices[type]);
+  //       setFlowers(response.data.flowers);
+  //     }); 
+
+  // }
+
+function addFlower(type) {
+  const newFlowers = {...flowers };
+  newFlowers[type]++;
+  setPrice(price + prices[type]);
+  setFlowers(newFlowers);
+}
+
+function removeFlower(type){
+  if (flowers[type]) {
+    const newFlowers = {...flowers };
+    newFlowers[type]--;
+    setPrice(price - prices[type]);
     setFlowers(newFlowers);
   }
+}
+//  function startOrdering() {
+//    setOrdering(true);
+//  }
 
-  function removeFlower(type) {
-    if (flowers[type]) {
-      const newFlowers = { ...flowers };
-      newFlowers[type]--;
-      checkCanBuy(newFlowers);
-      setPrice(price - prices[type]);
-      setFlowers(newFlowers);
-    }
-  }
+//  function finishOrdering() {
+//    axios
+//      .post('https://builder-a51d0-default-rtdb.firebaseio.com/orders.json', {
+//        flowers: flowers,
+//        price: price,
+//        address: "1234 Jusaevs str",
+//        phone: "0 703 774 608",
+//        name: "Ayana Zhaparova",
+//      })
+//      .then(() => {
+//        setOrdering(false);
+//        loadDefaults();
+//      });
+//  }
 
   return (
     <div className={classes.SeedsBuilder}>
-      <Modal show={isBuying} cancelCallback={() => setIsBuying(false)}>
-        <OrderSummary flowers={flowers} price={price} />
-      </Modal>
+    <SeedsPreview
+    flowers={flowers}
+    price={price} />
+    <SeedsControls
+    flowers={flowers}
+    addFlower={addFlower}
+    removeFlower={removeFlower}
+    // startOrdering={startOrdering}
+    />
 
-      <SeedsPreview
-        flowers={flowers}
-        price={price} />
-      <SeedsControls
-        canBuy={canBuy}
-        setIsBuying={setIsBuying}
-        flowers={flowers}
-        addFlower={addFlower}
-        removeFlower={removeFlower}
-        />
+      {/* <Modal  */}
+      {/* show={ordering} 
+      cancel={stopOrdering}>
+      
+      <OrderSummary 
+      flowers={flowers} 
+      price={price} />
+      
+      <Button onClick={finishOrdering} green>Checkout</Button>
+      <Button onClick={stopOrdering}>Cancel</Button> */}
+      {/* </Modal> */}
     </div>
   );
 }
