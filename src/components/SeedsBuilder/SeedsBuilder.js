@@ -4,7 +4,7 @@ import SeedsControls from "./SeedsControls/SeedsControls";
 
 import classes from "./SeedsBuilder.module.css";
 import { useEffect,useState } from "react";
-//import axios from "axios";
+import axios from "axios";
 import Button from "../UI/Button/Button";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import Modal from "../UI/Modal/Modal";
@@ -16,25 +16,25 @@ const SeedsBuilder = () => {
     ochamomile: 5,
     plumeria: 5,
     gerbera: 5,
-    tulip: 5,
+    lily: 5,
   };
   
   const [flowers, setFlowers] = useState({});
   const [price, setPrice] = useState(0);
-  // const [ordering, setOrdering] = useState(false);
+  const [ordering, setOrdering] = useState(false);
 
-  // useEffect(loadDefaults, []);
+  useEffect(loadDefaults, []);
 
-  // function loadDefaults() {
-  //   axios
-  //     .get('https://builder-a51d0-default-rtdb.firebaseio.com/default.json')
-  //     .then(response => {
-  //       setPrice(response.data.price);
+  function loadDefaults() {
+    axios
+      .get('https://builder-400c1-default-rtdb.firebaseio.com/default.json')
+      .then(response => {
+        setPrice(response.data.price);
 
-  //       setFlowers(response.data.flowers);
-  //     }); 
+        setFlowers(response.data.flowers);
+      }); 
 
-  // }
+  }
 
 function addFlower(type) {
   const newFlowers = {...flowers };
@@ -51,24 +51,24 @@ function removeFlower(type){
     setFlowers(newFlowers);
   }
 }
-//  function startOrdering() {
-//    setOrdering(true);
-//  }
+ function startOrdering() {
+   setOrdering(true);
+ }
 
-//  function finishOrdering() {
-//    axios
-//      .post('https://builder-a51d0-default-rtdb.firebaseio.com/orders.json', {
-//        flowers: flowers,
-//        price: price,
-//        address: "1234 Jusaevs str",
-//        phone: "0 703 774 608",
-//        name: "Ayana Zhaparova",
-//      })
-//      .then(() => {
-//        setOrdering(false);
-//        loadDefaults();
-//      });
-//  }
+ function finishOrdering() {
+   axios
+     .post('https://builder-a51d0-default-rtdb.firebaseio.com/orders.json', {
+       flowers: flowers,
+       price: price,
+       address: "1234 Jusaevs str",
+       phone: "0 703 774 608",
+       name: "Ayana Zhaparova",
+     })
+     .then(() => {
+       setOrdering(false);
+       loadDefaults();
+     });
+ }
 
   return (
     <div className={classes.SeedsBuilder}>
@@ -79,20 +79,21 @@ function removeFlower(type){
     flowers={flowers}
     addFlower={addFlower}
     removeFlower={removeFlower}
-    // startOrdering={startOrdering}
+    startOrdering={startOrdering}
     />
 
-      {/* <Modal  */}
-      {/* show={ordering} 
-      cancel={stopOrdering}>
+      <Modal 
+      show={ordering} 
+      // cancel={stopOrdering}
+      >
       
       <OrderSummary 
       flowers={flowers} 
       price={price} />
       
       <Button onClick={finishOrdering} green>Checkout</Button>
-      <Button onClick={stopOrdering}>Cancel</Button> */}
-      {/* </Modal> */}
+      {/* <Button onClick={stopOrdering}>Cancel</Button> */}
+      </Modal>
     </div>
   );
 }

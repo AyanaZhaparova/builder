@@ -6,14 +6,15 @@ const SeedsControls = ({
   flowers,
   addFlower,
   removeFlower,
-  startOrdering
+  startOrdering,
 }) => {
   const results = [];
   let total = 0;
   for (const flower in flowers) {
     total += flowers[flower];
 
-    results.push(<SeedsControl
+    results.push(
+       <SeedsControl
         key={flower}
         add={addFlower}
         remove={removeFlower}
