@@ -2,7 +2,9 @@
   flex: 0 0 250px;
   border-radius: 1rem;
   padding: 1rem;
-  background-color: lightcoral;
+  background-color: #b8b7ad;
+  opacity: 0.7; 
+  filter: alpha(Opacity=70);
   color: white;
   text-align: center;
 }
