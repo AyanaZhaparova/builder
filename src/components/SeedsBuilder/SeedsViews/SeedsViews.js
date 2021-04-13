@@ -6,17 +6,17 @@ import roseBackground from "../../../images/rose.svg";
 import plumeriaBackground from "../../../images/plumeria.svg";
 import lilyBackground from "../../../images/lily.svg";
 import gerberaBackground from "../../../images/gerbera.svg";
-// import chamomileBackground from "../../../images/chamomileBackground.svg";
-// import orchidsBackground from "../../../images/orchids.svg";
+import chamomileBackground from "../../../images/chamomile.svg";
+import orchidsBackground from "../../../images/orchids.svg";
 
 const SeedsViews = ({ type }) => {
   const types = {
-    rose: { backgroundImage: `url(${roseBackground})`, width: "45px", height: "45px" },
-    plumeria: { backgroundImage: `url(${plumeriaBackground})`, width: "45px", height: "45px" },
+    rose: { backgroundImage: `url(${roseBackground})`, width: "53px", height: "53px" },
+    plumeria: { backgroundImage: `url(${plumeriaBackground})`, width: "50px", height: "50px" },
     lily: { backgroundImage: `url(${lilyBackground})`, width: "45px", height: "45px" },
-    gerbera: { backgroundImage: `url(${gerberaBackground})`, width: "35px", height: "35px" },
-    // chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "35px", height: "35px" },
-    // orchids: { backgroundImage: `url(${orchidsBackground})`, width: "35px", height: "35px" },
+    gerbera: { backgroundImage: `url(${gerberaBackground})`, width: "45px", height: "45px" },
+    chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "45px", height: "45px" },
+    orchids: { backgroundImage: `url(${orchidsBackground})`, width: "45px", height: "45px" },
   };
  
   return ( 
