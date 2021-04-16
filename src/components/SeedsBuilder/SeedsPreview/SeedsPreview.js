@@ -5,19 +5,20 @@ const SeedsPreview = ({ flowers, price }) => {
   const result = [];
   for (const flower in flowers) {
     for (let i = 0; i < flowers[flower]; i++) {
-      result.push(<SeedsViews key={flower + i} type={flower} />)
+      result.push(<SeedsViews type={flower} />)
     }
   }
 
   return (
+    <div>
     <div className={classes.SeedsPreview}>
-      <div className={classes.pizza}>
-        <div
-          className={classes.flowers}>
+        <div className={classes.flowers}>
           {result}
         </div>
-      </div>
-      <div className={classes.price}>{price.toFixed(1)} som</div>
+    </div> 
+    <div> 
+        <div className={classes.price}>{price.toFixed(1)} som</div>
+    </div>
     </div>
   );
 }
