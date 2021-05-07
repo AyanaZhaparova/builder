@@ -3,11 +3,12 @@ import SeedsPreview from "./SeedsPreview/SeedsPreview";
 import SeedsControls from "./SeedsControls/SeedsControls";
 
 import classes from "./SeedsBuilder.module.css";
-import { useEffect,useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import Button from "../UI/Button/Button";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import Modal from "../UI/Modal/Modal";
+import { useSelector } from "react-redux";
 
 const SeedsBuilder = () => {
   const prices = {
@@ -19,28 +20,28 @@ const SeedsBuilder = () => {
     lily: 5,
   };
   
-  const [flowers, setFlowers] = useState({});
+  const flowers = useSelector(state => state.flowers)
   const [price, setPrice] = useState(0);
   const [ordering, setOrdering] = useState(false);
 
-  useEffect(loadDefaults, []);
+  // useEffect(loadDefaults, []);
 
-  function loadDefaults() {
-    axios
-      .get('https://builder-400c1-default-rtdb.firebaseio.com/default.json')
-      .then(response => {
-        setPrice(response.data.price);
+  // function loadDefaults() {
+  //   axios
+  //     .get('https://builder-400c1-default-rtdb.firebaseio.com/default.json')
+  //     .then(response => {
+  //       setPrice(response.data.price);
 
-        setFlowers(response.data.flowers);
-      }); 
+  //       setFlowers(response.data.flowers);
+  //     }); 
 
-  }
+  // }
 
 function addFlower(type) {
   const newFlowers = {...flowers };
   newFlowers[type]++;
   setPrice(price + prices[type]);
-  setFlowers(newFlowers);
+  
 }
 
 function removeFlower(type){
@@ -48,7 +49,7 @@ function removeFlower(type){
     const newFlowers = {...flowers };
     newFlowers[type]--;
     setPrice(price - prices[type]);
-    setFlowers(newFlowers);
+    
   }
 }
  function startOrdering() {
@@ -66,7 +67,7 @@ function removeFlower(type){
      })
      .then(() => {
        setOrdering(false);
-       loadDefaults();
+      //  loadDefaults();
      });
  }
 
