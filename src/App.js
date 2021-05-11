@@ -1,6 +1,6 @@
 import Layout from "./components/Layout/Layout";
 import SeedsBuilder from "./components/SeedsBuilder/SeedsBuilder";
-import Checkout from "./Checkout/Checkout";
+import Checkout from "./components/Checkout/Checkout";
 import Orders from "./components/Orders/Orders";
 
 import "./App.css";
