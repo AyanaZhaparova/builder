@@ -1,4 +1,4 @@
-import Button from "../../../components/UI/Button/Button";
+import Button from "../../../UI/Button/Button";
 import classes from "./CheckoutForm.module.css";
 
 const CheckoutForm = ({ submitCallback, cancelCallback }) => {
