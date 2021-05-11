@@ -1,102 +1,60 @@
 
 import SeedsPreview from "./SeedsPreview/SeedsPreview";
 import SeedsControls from "./SeedsControls/SeedsControls";
-
+import withAxios from '../withAxios';
+import axios from '../../axios';
 import classes from "./SeedsBuilder.module.css";
-import { useState } from "react";
-import axios from "axios";
-import Button from "../UI/Button/Button";
-import OrderSummary from "./OrderSummary/OrderSummary";
+import { useEffect, useState } from "react";
 import Modal from "../UI/Modal/Modal";
-import { useSelector } from "react-redux";
+import OrderSummary from "./OrderSummary/OrderSummary";
+import Button from "../UI/Button/Button";
+import { useDispatch, useSelector } from 'react-redux';
+import { load } from '../../store/actions/builder';
 
-const SeedsBuilder = () => {
-  const prices = {
-    rose: 5,
-    orchids: 5,
-    ochamomile: 5,
-    plumeria: 5,
-    gerbera: 5,
-    lily: 5,
-  };
-  
-  const flowers = useSelector(state => state.flowers)
-  const [price, setPrice] = useState(0);
+
+const SeedsBuilder = ({ history }) => {
+  const dispatch = useDispatch();
+  const flowers = useSelector(state => state.builder.flowers);
+  const price = useSelector(state => state.builder.price);
   const [ordering, setOrdering] = useState(false);
-
-  // useEffect(loadDefaults, []);
-
-  // function loadDefaults() {
-  //   axios
-  //     .get('https://builder-400c1-default-rtdb.firebaseio.com/default.json')
-  //     .then(response => {
-  //       setPrice(response.data.price);
-
-  //       setFlowers(response.data.flowers);
-  //     }); 
-
-  // }
-
-function addFlower(type) {
-  const newFlowers = {...flowers };
-  newFlowers[type]++;
-  setPrice(price + prices[type]);
   
-}
+  useEffect(() => dispatch(load()), [dispatch]);
 
-function removeFlower(type){
-  if (flowers[type]) {
-    const newFlowers = {...flowers };
-    newFlowers[type]--;
-    setPrice(price - prices[type]);
-    
+  function startOrdering() {
+    setOrdering(true);
   }
-}
- function startOrdering() {
-   setOrdering(true);
- }
 
- function finishOrdering() {
-   axios
-     .post('https://builder-a51d0-default-rtdb.firebaseio.com/orders.json', {
-       flowers: flowers,
-       price: price,
-       address: "1234 Jusaevs str",
-       phone: "0 703 774 608",
-       name: "Ayana Zhaparova",
-     })
-     .then(() => {
-       setOrdering(false);
-      //  loadDefaults();
-     });
- }
+  function stopOrdering() {
+    setOrdering(false);
+  }
+
+  function finishOrdering() {
+    setOrdering(false);
+    history.push('/checkout');
+  }
 
   return (
     <div className={classes.SeedsBuilder}>
-    <SeedsPreview
-    flowers={flowers}
-    price={price} />
-    <SeedsControls
-    flowers={flowers}
-    addFlower={addFlower}
-    removeFlower={removeFlower}
-    startOrdering={startOrdering}
-    />
-
-      <Modal 
-      show={ordering} 
-      // cancel={stopOrdering}
-      >
-      
-      <OrderSummary 
-      flowers={flowers} 
-      price={price} />
-      
-      <Button onClick={finishOrdering} green>Checkout</Button>
-      {/* <Button onClick={stopOrdering}>Cancel</Button> */}
-      </Modal>
+      <SeedsPreview
+        flowers={flowers}
+        price={price} />
+      <SeedsControls
+        flowers={flowers}
+        startOrdering={startOrdering}
+        />
+      <Modal
+        show={ordering}
+        cancel={stopOrdering}>
+          <OrderSummary
+            flowers={flowers}
+            price={price}
+            />
+          <Button onClick={finishOrdering} green="green">Checkout</Button>
+          <Button onClick={stopOrdering}>Cancel</Button>
+        </Modal>
     </div>
   );
 }
+  
 
-export default SeedsBuilder;
+export default withAxios(SeedsBuilder, axios);
