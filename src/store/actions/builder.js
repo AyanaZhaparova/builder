@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../axios";
 import { ADD_FLOWER, REMOVE_FLOWER, SET_FLOWERS } from "./types";
 
 export const add = (flower) => ({
