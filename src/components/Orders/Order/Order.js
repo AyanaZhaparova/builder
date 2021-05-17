@@ -2,7 +2,7 @@ import classes from "./Order.module.css";
 
 const Order = ({ name, phone, address, flowers, price }) => {
   const outputFlowers = Object.keys(flowers)
-    .map(flower => <em>{flower} - {flowers[flower]}</em>);
+    .map(flower => <em key={flower}>{flower} - {flowers[flower]}</em>);
 
   return (
     <div className={classes.Order}>
