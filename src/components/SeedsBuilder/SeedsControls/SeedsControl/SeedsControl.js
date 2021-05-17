@@ -1,15 +1,18 @@
+import { useDispatch } from "react-redux";
+import { add, remove } from "../../../../store/actions/builder";
 import Button from "../../../UI/Button/Button";
-import SeedsViews from "../../SeedsViews/SeedsViews";
+import Seed from "../../Seed/Seed";
 import classes from "./SeedsControl.module.css";
 
-const SeedsControl = ({ type, add, remove, count }) => {
+const SeedsControl = ({ type, count }) => {
+  const dispatch = useDispatch();
   return (
     <div className={classes.SeedsControl}>
-      <Button onClick={() => add(type)}>+</Button>
+      <Button onClick={() => dispatch(add(type))}>+</Button>
       <div className={classes.flower}>
-        <SeedsViews type={type} fixed />
+        <Seed type={type} fixed />
       </div>
-      <Button onClick={() => remove(type)} disabled={!count}>-</Button>
+      <Button onClick={() => dispatch(remove(type))} disabled={!count}>-</Button>
     </div>
   );
 }
