@@ -13,7 +13,6 @@ const App = () => {
         <Switch>
           <Route path="/" component={SeedsBuilder} exact />
           <Route path="/checkout" component={Checkout} />
-          <Route path="/checkout" component={Checkout} />
           <Route path="/orders" component={Orders} />
           <Redirect to="/" />;
         </Switch> 

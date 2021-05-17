@@ -1,5 +1,5 @@
 import SeedsPreview from "../SeedsBuilder/SeedsPreview/SeedsPreview";
-import CheckoutForm from "./CheckoutSummary/CheckoutForm/CheckoutForm";
+import CheckoutForm from "./";
 import classes from "./Checkout.module.css";
 import axios from "../../axios";
 import { useSelector } from "react-redux";
