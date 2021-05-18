@@ -20,7 +20,7 @@ const Seed = ({ type }) => {
   };
  
   return ( 
-    <div className={classes.Seeв} style={types[type]}></div>
+    <div className={classes.Seed} style={types[type]}></div>
  );
 }
 
