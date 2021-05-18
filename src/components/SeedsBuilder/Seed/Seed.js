@@ -11,7 +11,7 @@ import orchidsBackground from "../../../images/orchids.svg";
 
 const Seed = ({ type }) => {
   const types = {
-    rose: { backgroundImage: `url(${roseBackground})`, width: "53px", height: "53px" },
+    rose: { backgroundImage: `url(${roseBackground})`, width: "50px", height: "50px" },
     plumeria: { backgroundImage: `url(${plumeriaBackground})`, width: "50px", height: "50px" },
     lily: { backgroundImage: `url(${lilyBackground})`, width: "45px", height: "45px" },
     gerbera: { backgroundImage: `url(${gerberaBackground})`, width: "45px", height: "45px" },
