@@ -4,11 +4,11 @@ import classes from "./OrderSummary.module.css";
 const OrderSummary = ({ flowers, price }) => {
   const labels = {
     rose: "Roses",
-    orchid: "Orchids",
+    orchids: "Orchids",
     chamomile: "Сhamomiles",
     plumeria: "Plumerias",
     gerbera: "Gerberas",
-    tulip: "Tulips",
+    lily: "Lilyes",
   }
   const results = Object.keys(flowers)
     .map(type => <li key={type}>{labels[type]}: {flowers[type]}</li>);
