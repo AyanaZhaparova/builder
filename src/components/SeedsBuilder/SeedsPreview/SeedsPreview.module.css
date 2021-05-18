@@ -52,7 +52,21 @@
   }
 }
 
+@media (max-width: 542px){
+  .price {
+   margin: 15px;
+   margin-left: 80px;
+   padding: 10px 0;
+  }
+}
 
+@media (max-width: 420px){
+  .price {
+   margin: 15px;
+   margin-left: 60px;
+   padding: 10px 0;
+  }
+}
 
 
 

@@ -19,10 +19,3 @@
   opacity: .5;
 }
 
-@media (max-width: 300px){
-   .Button {
-    margin: 15px;
-    margin-left: 80px;
-    padding: 10px 10px;
-   }
-}
