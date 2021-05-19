@@ -3,10 +3,10 @@
 
   text-decoration: none;
   display: block;
-  padding: 1rem;
+  padding: 1.3rem;
   font-size: 1.6rem;
 
-  /* -webkit-text-stroke: .5px #000000; */
+  
 }
 .NavItem a:hover {
   border-color: white;
