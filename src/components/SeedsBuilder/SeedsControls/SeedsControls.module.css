@@ -7,6 +7,9 @@
   filter: alpha(Opacity=70);
   color: white;
   text-align: center;
+
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .SeedsControls strong {
