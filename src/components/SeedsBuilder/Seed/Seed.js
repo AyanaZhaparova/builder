@@ -11,12 +11,12 @@ import orchidsBackground from "../../../images/orchids.svg";
 
 const Seed = ({ type }) => {
   const types = {
-    rose: { backgroundImage: `url(${roseBackground})`, width: "50px", height: "50px" },
-    plumeria: { backgroundImage: `url(${plumeriaBackground})`, width: "50px", height: "50px" },
-    lily: { backgroundImage: `url(${lilyBackground})`, width: "45px", height: "45px" },
-    gerbera: { backgroundImage: `url(${gerberaBackground})`, width: "45px", height: "45px" },
-    chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "45px", height: "45px" },
-    orchids: { backgroundImage: `url(${orchidsBackground})`, width: "45px", height: "45px" },
+    rose: { backgroundImage: `url(${roseBackground})`, width: "60px", height: "60px" },
+    plumeria: { backgroundImage: `url(${plumeriaBackground})`, width: "60px", height: "60px" },
+    lily: { backgroundImage: `url(${lilyBackground})`, width: "55px", height: "55px" },
+    gerbera: { backgroundImage: `url(${gerberaBackground})`, width: "55px", height: "55px" },
+    chamomile: { backgroundImage: `url(${chamomileBackground})`, width: "55px", height: "55px" },
+    orchids: { backgroundImage: `url(${orchidsBackground})`, width: "55px", height: "55px" },
   };
  
   return ( 
