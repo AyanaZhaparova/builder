@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { add, remove } from "../../../../store/actions/builder";
 import Button from "../../../UI/Button/Button";
-import Seed from "../../Seed/Seed";
+
 import classes from "./SeedsControl.module.css";
 
 const SeedsControl = ({ type, count }) => {
