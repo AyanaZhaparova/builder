@@ -4,10 +4,9 @@ const Order = ({ name, phone, address, flowers, price }) => {
   
     const outputFlowers = Object.keys(flowers).map((flower) => (
    
-      <li>{flower} - {flowers[flower]}</li>
+      <li key={flower}>{flower} - {flowers[flower]}</li>
     
   ));
-  console.log(outputFlowers);
 
   return (
     <div className={classes.Order}>
