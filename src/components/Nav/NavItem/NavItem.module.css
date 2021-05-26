@@ -10,7 +10,7 @@
 }
 .NavItem a:hover {
   border-color: white;
-  background-color: gray;
+  background-color: #702963;
   border-bottom: 3px solid transparent;
 }
 .NavItem a:active,
