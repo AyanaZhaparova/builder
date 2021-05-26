@@ -14,6 +14,7 @@ import { load } from '../../store/actions/builder';
 
 const SeedsBuilder = ({ history }) => {
   const dispatch = useDispatch();
+  const isAuthenticated = useSelector(state => state.auth.token !== null);
   const flowers = useSelector(state => state.builder.flowers);
   const price = useSelector(state => state.builder.price);
   const [ordering, setOrdering] = useState(false);
@@ -21,7 +22,12 @@ const SeedsBuilder = ({ history }) => {
   useEffect(() => dispatch(load()), [dispatch]);
 
   function startOrdering() {
-    setOrdering(true);
+    if (isAuthenticated) {
+       setOrdering(true);
+    }
+    else {
+       history.push("/auth");
+    }
   }
 
   function stopOrdering() {
