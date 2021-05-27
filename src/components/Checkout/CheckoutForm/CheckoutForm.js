@@ -10,13 +10,13 @@ const CheckoutForm = ({ submitCallback, cancelCallback }) => {
           placeholder="Ex: John Doe" />
       </div>
       <div>
-        <label htmlFor="phone">Phone</label>
+        <label htmlFor="phone">Phone:</label>
         <input type="tel" id="phone" name="phone" required
           placeholder="Ex: 0700700700"
           pattern="0[0-9]{9}" />
       </div>
       <div>
-        <label htmlFor="address">Address</label>
+        <label htmlFor="address">Address:</label>
         <input type="text" id="address" name="address" required
           placeholder="Ex: Jusaeva 1" />
       </div>
