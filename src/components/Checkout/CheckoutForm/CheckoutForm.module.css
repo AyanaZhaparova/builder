@@ -4,7 +4,7 @@
     font-size: 1.5rem;
     justify-content: center;
     text-align: center;
-    background-color: gray;
+    background-color: #702963;
     padding: 1rem .5rem;
     border-radius: 1rem;
     opacity: 0.7; 
@@ -14,6 +14,9 @@
 .CheckoutForm > div{
     flex: 0 0 100%;
     padding: .2rem 1rem;
+}
+.CheckoutForm input {
+    margin-left: 10px;
 }
 
 .CheckoutForm > div > input{
