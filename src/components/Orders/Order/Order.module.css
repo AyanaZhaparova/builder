@@ -1,0 +1,13 @@
+.Order{
+    color: rgb(102,2,60);
+    margin: 2rem;
+    padding: 1rem;
+    width: 15rem;
+    font-size: 20px;
+    border-radius: 10%;
+    box-shadow: 0 0 20px rgb(102 2 60 / 50%);
+  }
+  .strong{
+    color: rgb(102,2,60);
+  }
+  /* rgb(102,2,60) */
