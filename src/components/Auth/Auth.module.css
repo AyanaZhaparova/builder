@@ -1,0 +1,41 @@
+.Auth{
+    /* width: 25rem; */
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+  }
+
+  .Auth form {
+    /* background-color: #702963; 
+    opacity: 0.7; 
+    filter: alpha(Opacity=70);  */
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    align-items: center;
+    
+    
+  }
+  .Auth h1 {
+      color: #702963;
+      font-size: 3rem;
+  }
+  .Auth input{
+    
+    width: 15rem;
+    height: 2.5rem;
+    margin-bottom: 1rem;
+    border-radius: .8rem;
+    border: 2px solid #702963;
+    
+  }
+
+
+  .Auth input::placeholder{
+    font-size: 1rem;
+    padding: 4px;
+    color: rgb(71, 73, 75);
+  }
